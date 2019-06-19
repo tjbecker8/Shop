@@ -1,0 +1,52 @@
+/* #f7f7f7 */
+
+html,
+body {
+	margin: 0;
+	padding: 30px;
+	background: #f0f0f0;
+}
+
+#wrap {
+	background-color: white;
+	padding: 50px;
+	border-radius: 15px;
+	box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+h1 {
+	font-family: helvetica, sans-serif;
+	font-size: 20px;
+}
+
+#container {
+	display: grid;
+	grid-template-columns: 200px auto;
+}
+
+#sidebar {
+
+}
+
+#content {
+
+}
+
+#sidebar ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+#sidebar ul li a {
+	text-decoration: none;
+	color: #d2d2d2;
+	font-family: Helvetica, sans-serif;
+	font-size: 17px;
+	display: block;
+	padding-bottom: 20px;
+}
+
+#sidebar ul li.active a {
+	font-weight: bold;
+	color: black;
+}
