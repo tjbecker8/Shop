@@ -23,7 +23,8 @@ h1 {
 	grid-template-columns: 200px auto;
 }
 
-#content {
+#products {
+	padding-top: 90px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-column-gap: 40px;
@@ -107,6 +108,10 @@ h1 {
 	cursor: pointer;
 }
 
+#sidebar > nav {
+	position: fixed;
+}
+
 #sidebar ul {
 	padding-left: 0;
 	list-style: none;
@@ -124,26 +129,26 @@ h1 {
 	color: black;
 }
 
-#sidebar > ul > li.active > a {
+#sidebar > nav > ul > li.active > a {
 	font-weight: bold;
 	color: black;
 	margin-top: -25px;
 }
 
-#sidebar > ul > li.active > a::after {
+#sidebar > nav > ul > li.active > a::after {
 	content: '•';
 	font-size: 48px;
 }
 
-#sidebar > ul > li > ul {
+#sidebar > nav > ul > li > ul {
 	padding-left: 20px;
 }
 
-#sidebar > ul > li > ul > li > a {
+#sidebar > nav > ul > li > ul > li > a {
 	font-size: 14px;
 }
 
-#sidebar > ul > li > ul > li.active > a {
+#sidebar > nav > ul > li > ul > li.active > a {
 	text-decoration: underline;
 	color: black;
 }
