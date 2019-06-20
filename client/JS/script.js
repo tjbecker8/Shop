@@ -11,6 +11,30 @@ window.onload = ()=>{
 			<a href="#">${c}</a>
 		</li>` )
 	})
+
+	let products = document.getElementById('products')
+	let shoes = ['airmax', 'jordans', 'tennis', 'run', 'crossfit']
+shoes.forEach((s) =>{
+	products.insertAdjacentHTML('beforeEnd', `
+	<div class="product">
+		<div class="product-image">
+			<i class="far fa-star"></i>
+		</div>
+		<div class="product-extras">
+			<div class="description">
+				<h4>Nike</h4>
+				<small>${s}</small>
+			</div>
+			<div class="price">
+				<span>$189.99</span>
+				<a href="#" class="button">shop now</a>
+			</div>
+		</div>
+	</div>
+	`)
+})
+
+
 	// let ul = document.getElementsByTagName('ul')[0]
 	// ul.insertAdjacentHTML('beforeEnd', `
 	// <li>
