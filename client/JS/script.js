@@ -13,7 +13,32 @@ window.onload = ()=>{
 	})
 
 	let products = document.getElementById('products')
-	let shoes = ['airmax', 'jordans', 'tennis', 'run', 'crossfit']
+	let shoes = [{
+		brand: 'Nike',
+		name: 'airmax',
+		price: '299.89'
+	},
+	{
+		brand: 'bauer',
+		name: 'jordans',
+		price: '109.99'
+	},
+	{
+		brand: 'salomon',
+		name: 'tennis',
+		price: '69.99'
+	},
+	{
+		brand: 'rebook',
+		name: 'run',
+		price: '$49.95'
+
+	},
+	{
+		brand: 'addidas',
+		name: 'crossfit',
+		price: '$59.99'
+	}]
 shoes.forEach((s) =>{
 	products.insertAdjacentHTML('beforeEnd', `
 	<div class="product">
@@ -22,11 +47,11 @@ shoes.forEach((s) =>{
 		</div>
 		<div class="product-extras">
 			<div class="description">
-				<h4>Nike</h4>
-				<small>${s}</small>
+				<h4>${s.brand}</h4>
+				<small>${s.name}</small>
 			</div>
 			<div class="price">
-				<span>$189.99</span>
+				<span>${s.price}</span>
 				<a href="#" class="button">shop now</a>
 			</div>
 		</div>
