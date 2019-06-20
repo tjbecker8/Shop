@@ -6,6 +6,7 @@ const app = express()
 
 //database
 const db = require('./db')
+// const query = require('./query')
 
 // Static Files
 
@@ -17,15 +18,19 @@ app.get('/', (req, res) => {
 	console.log('__dirname', __dirname)
 })
 
-app.get('/api/products', (req, res) => {
-	db.query(`SELECT * FROM products`, (err, result) => {
-		if (err) {
-			console.log('err', err)
-		} else {
-			res.send(result.rows)
-		}
-	})
-})
+app.get('/api/products', require('./controllers/products_get'))
+
+app.get('/api/colors', require('./controllers/color_get'))
+
+// app.get('/api/products', (req, res) => {
+// 	db.query(`SELECT * FROM products`, (err, result) => {
+// 		if (err) {
+// 			console.log('err', err)
+// 		} else {
+// 			res.send(result.rows)
+// 		}
+// 	})
+// })
 
 app.get('/categories', (req, res) => {
 	db.query(`SELECT * FROM categories`, (err, result) => {
