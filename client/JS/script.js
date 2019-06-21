@@ -29,8 +29,8 @@ window.onload = ()=>{
 		console.log('err', err);
 	})
 
-	axios.get('http://localhost:3000/api/click').then((res)=> {
-		let click = res.data
+	axios.get('http://localhost:3000/api/click/:id').then((res)=> {
+		let click = res.data.id
 		//add click listener
 		let ul = document.getElementsByTagName('a')[0].addEventListener('click', ()=>{
 			click.forEach((c)=> {
