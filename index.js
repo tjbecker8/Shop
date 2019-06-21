@@ -24,6 +24,8 @@ app.get('/api/colors', require('./controllers/color_get'))
 
 app.get('/api/categories', require('./controllers/categories_get'))
 
+app.get('/api/click', require('./controllers/click_get'))
+
 // app.get('/api/products', (req, res) => {
 // 	db.query(`SELECT * FROM products`, (err, result) => {
 // 		if (err) {

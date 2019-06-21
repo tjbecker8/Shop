@@ -29,6 +29,19 @@ window.onload = ()=>{
 		console.log('err', err);
 	})
 
+	axios.get('http://localhost:3000/api/click').then((res)=> {
+		let click = res.data
+		//add click listener
+		let ul = document.getElementsByTagName('a')[0].addEventListener('click', ()=>{
+			click.forEach((c)=> {
+				console.log(c);
+			})
+		})
+	}).catch((err) => {
+		console.log('err', err);
+	})
+
+
 
 	//write this function first for async function
 	// ('url').then(() => {console.log()}).catch(() => {console.log()})
@@ -66,35 +79,10 @@ window.onload = ()=>{
 		console.log('err', err);
 	})
 
-	// let products_ui = document.getElementById('products')
-	// //display each product in the dom
-	// products.forEach((s) =>{
-	// 	products_ui.insertAdjacentHTML('beforeEnd', `
-	// <div class="product">
-	// 	<div class="product-image">
-	// 		<i class="far fa-star"></i>
-	// 	</div>
-	// 	<div class="product-extras">
-	// 		<div class="description">
-	// 			<h4>${s.name}</h4>
-	// 			<small>${s.features}</small>
-	// 		</div>
-	// 		<div class="price">
-	// 			<span>${s.cost}</span>
-	// 			<a href="#" class="button">shop now</a>
-	// 		</div>
-	// 	</div>
-	// </div>
-	// `)
-	// })
 
-
-	// let ul = document.getElementsByTagName('ul')[0]
-	// ul.insertAdjacentHTML('beforeEnd', `
-	// <li>
-	// 	<a href="#">wallets</a>
-	// </li>` )	}
 }
+
+
 
 // let arr = [1, 2, 3, 4, 5]
 // console.log(arr);
