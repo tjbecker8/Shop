@@ -28,6 +28,8 @@ window.onload = ()=>{
 	}).catch((err) => {
 		console.log('err', err);
 	})
+
+	
 	//write this function first for async function
 	// ('url').then(() => {console.log()}).catch(() => {console.log()})
 	// :: products::
