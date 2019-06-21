@@ -19,12 +19,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', require('./controllers/products_get'))
-
+app.get('/api/click/:id', require('./controllers/click_get'))
 app.get('/api/colors', require('./controllers/color_get'))
 
 app.get('/api/categories', require('./controllers/categories_get'))
+//this becomes a peramiter
 
-app.get('/api/click', require('./controllers/click_get'))
 
 // app.get('/api/products', (req, res) => {
 // 	db.query(`SELECT * FROM products`, (err, result) => {

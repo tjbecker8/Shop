@@ -12,7 +12,7 @@ module.exports = (req, res) => {
 FROM products
 LEFT JOIN categories
 ON products.category = categories.id
-WHERE category = '1'
+WHERE category = ${req.params.id}
 `, (err, result) => {
 		if (err) {
 			console.log('err', err)
