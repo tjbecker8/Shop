@@ -22,30 +22,12 @@ window.onload = ()=>{
 		categories.forEach((c) =>{
 			ul.insertAdjacentHTML('beforeEnd', `
 			<li>
-				<a href="#">${c.name}</a>
+				<a href="#" class="category"id="${c.id}">${c.name}</a>
 			</li>` )
 		})
 	}).catch((err) => {
 		console.log('err', err);
 	})
-
-	axios.get('http://localhost:3000/api/click/:id').then((res)=> {
-		let click = res.data.id
-		//add click listener
-		let ul = document.getElementsByTagName('a')[0].addEventListener('click', ()=>{
-			click.forEach((c)=> {
-				console.log(c);
-			})
-		})
-	}).catch((err) => {
-		console.log('err', err);
-	})
-
-
-
-	//write this function first for async function
-	// ('url').then(() => {console.log()}).catch(() => {console.log()})
-	// :: products::
 
 	axios.get('http://localhost:3000/api/products').then((res)=> {
 		// console.log('res', res.data)
@@ -78,6 +60,61 @@ window.onload = ()=>{
 	}).catch((err) => {
 		console.log('err', err);
 	})
+
+	//on click
+
+	document.addEventListener('click', (e) =>{
+		if (e.target.classList.contains('category')) {
+			axios.get(`http://localhost:3000/api/click/${e.target.id}`).then((res)=> {
+				// console.log('res', res.data)
+				let products = res.data
+				//	target products
+				let products_ui = document.getElementById('products')
+				//clear the document
+				products.ui.innerHTML = ''
+				//display each product in the dom
+				products.forEach((s) =>{
+					products_ui.insertAdjacentHTML('beforeEnd', `
+			<div class="product">
+				<div class="product-image" style="background-image: url('../img/${s.image}')">
+					<i class="far fa-star"></i>
+				</div>
+				<div class="product-extras">
+					<div class="description">
+						<h4>${s.name}</h4>
+						<small>${s.features}</small>
+					</div>
+					<div class="price">
+						<span>$${s.cost}</span>
+						<a href="#" class="button">shop now</a>
+					</div>
+				</div>
+			</div>
+			`)
+				})
+
+			}).catch((err) => {
+				console.log('err', err);
+			})
+		}
+	})
+
+
+
+	// 	let click = res.data.id
+	// 	//add click listener
+	// 	let cl = document.getElementsByTagName('a')[0].addEventListener('click', ()=>{
+	// 		click.forEach((c)=> {
+	// 			console.log(c);
+	// 		})
+	// 	})
+	// }).catch((err) => {
+	// 	console.log('err', err);
+
+
+	//write this function first for async function
+	// ('url').then(() => {console.log()}).catch(() => {console.log()})
+	// :: products::
 
 
 }
