@@ -29,7 +29,7 @@ window.onload = ()=>{
 		console.log('err', err);
 	})
 
-	
+
 	//write this function first for async function
 	// ('url').then(() => {console.log()}).catch(() => {console.log()})
 	// :: products::
@@ -45,7 +45,7 @@ window.onload = ()=>{
 		products.forEach((s) =>{
 			products_ui.insertAdjacentHTML('beforeEnd', `
 	<div class="product">
-		<div class="product-image">
+		<div class="product-image" style="background-image: url('../img/${s.image}')">
 			<i class="far fa-star"></i>
 		</div>
 		<div class="product-extras">
